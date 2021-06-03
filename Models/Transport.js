@@ -1,8 +1,8 @@
 export default class Transport {
 
     engine;
-    fuelTankVolume;
-    length;
+    #fuelTankVolume;
+    #length;
 
     constructor(name, engine, fuelTankVolume, length) {
         this.name = name;
@@ -10,6 +10,24 @@ export default class Transport {
         this.fuelTankVolume = fuelTankVolume;
         this.length = length;
 
+    }
+    get fuelTankVolume () {
+        return this.#fuelTankVolume;
+    }
+    set fuelTankVolume (value) {
+        if(value < 0) {
+            console.log("Fuel Tank Volume can't be negative")
+        }
+    }
+
+    get length () {
+        return this.#length;
+    }
+
+    set length (value) {
+        if (value < 0){
+            console.log("There's no length")
+        }
     }
 
     toString() {
@@ -27,5 +45,6 @@ export default class Transport {
     callAt = () => {
         console.log("The ship called at one port")
     }
-}
 
+
+}
