@@ -37,13 +37,18 @@ aquila36.callAt()
 
 const num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-let takeRight;
-takeRight = num.splice(0, 3, 3)
-console.log(takeRight)
-
-let takeLeft;
-takeLeft = num.splice(6)
-console.log(takeLeft)
+function takeRight () {
+    Array.prototype.takeRight = () => {
+        num.splice(0, 3, 3)
+        console.log(takeRight)
+    }
+}
+    function takeLeft() {
+        Array.prototype.takeLeft = () => {
+            num.splice(6)
+            console.log(takeLeft)
+        }
+    }
 
 
 const takeWhile = (num, fn) => {
